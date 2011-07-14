@@ -1,7 +1,7 @@
 Summary:	Adobe Flash Player 11
 Name:		flash-plugin
 Version:	11.0.1.60
-Release:	1
+Release:	2.R
 Epoch:		6
 
 Group:		Applications/Internet
@@ -20,6 +20,15 @@ Adobe Flash (formerly Macromedia Flash) is a multimedia platform used to
 add animation, video, and interactivity to Web pages. Flash is frequently
 used for advertisements and games. More recently, it has been positioned
 as a tool for "Rich Internet Applications" ("RIAs").
+
+%package kde
+Summary:	KDE workspace files
+Group:          Applications/Internet
+Requires:	flash-plugin = %{version}
+
+
+%description kde
+Adobe Flash files to work with KDE
 
 
 %prep
@@ -74,11 +83,17 @@ rm -rf %{buildroot}
 %{_libdir}/kde4/kcm_adobe_flash_player.so
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*
-%{_datadir}/kde4/*
 %{_datadir}/pixmaps/*
+
+%files kde
+%defattr(-, root, root, -)
+%{_datadir}/kde4/*
 
 
 %changelog
+* Thu Jul 14 2011 Arkady L. Shane <ashejn@yandex-team.ru> 6:11.0.1.60-2.R
+- create separate package for KDE
+
 * Thu Jul 14 2011 Arkady L. Shane <ashejn@yandex-team.ru> 6:11.0.1.60-1
 - update to 11.0.1.60
 
