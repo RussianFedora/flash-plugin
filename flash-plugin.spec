@@ -1,25 +1,17 @@
-Summary:	Adobe Flash Player 10.2
-Name: 		flash-plugin
-Version: 	10.2.161.23
-Release: 	2
-Epoch:		5
+Summary:	Adobe Flash Player 11
+Name:		flash-plugin
+Version:	11.0.1.60
+Release:	1
+Epoch:		6
 
-Group: 		Applications/Internet
-License: 	Commercial
-URL: 		http://www.adobe.com
-Source0:	flashplayer_square_p2_32bit_linux_092710.tar.gz
-Source1:	flashplayer_square_p2_64bit_linux_092710.tar.gz
-
-# https://bugzilla.redhat.com/show_bug.cgi?id=638477#c94
-Source2:	memcpy-to-memmove.sh
-
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-Obsoletes:	swfdec-mozilla
-Obsoletes:	flash-plugin-i386
+Group:		Applications/Internet
+License:	Proprietary
+URL:		http://www.adobe.com
+Source0:	http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_b1_install_lin_32_071311.tar.gz
+Source1:	http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_b1_install_lin_64_071311.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:	flash-plugin-meta
-
 AutoReq:	on
 
 
@@ -31,38 +23,44 @@ as a tool for "Rich Internet Applications" ("RIAs").
 
 
 %prep
-rm -rf %{buildroot}
-%setup -q -c -T
+%setup -q -c -T 
 
 
 %build
 
 
 %install
+rm -rf %{buildroot}
 mkdir -p %{buildroot}
 
-%ifarch x86_64
 pushd %{buildroot}
-mkdir -p usr/lib64/flash-plugin
-cd usr/lib64/flash-plugin
-tar xzf %{SOURCE1}
-# memcpy-to-memmove
-%{SOURCE2} libflashplayer.so
-popd
-%else
-pushd %{buildroot}
-mkdir -p usr/lib/flash-plugin
-cd usr/lib/flash-plugin
-tar xzf %{SOURCE0}
-popd
-%endif
-
-rm -rf %{buildroot}%{_datadir}/doc
-
 
 mkdir -p %{buildroot}%{_libdir}/mozilla/plugins/
-cd %{buildroot}%{_libdir}/mozilla/plugins/
-ln -s ../../flash-plugin/libflashplayer.so
+%ifarch x86_64
+tar xzf %{SOURCE1}
+mv usr/lib/* usr/lib64
+rmdir usr/lib
+%else
+tar xzf %{SOURCE0}
+%endif
+mv libflashplayer.so %{buildroot}%{_libdir}/mozilla/plugins/
+
+
+%post
+touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+update-desktop-database %{_datadir}/applications &> /dev/null ||:
+
+
+%postun
+if [ $1 -eq 0 ] ; then
+    touch --no-create %{_datadir}/icons/hicolor &>/dev/null
+    gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+fi
+update-desktop-database %{_datadir}/applications &> /dev/null ||:
+
+
+%posttrans
+gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %clean
@@ -70,12 +68,20 @@ rm -rf %{buildroot}
 
 
 %files
-%defattr(-, root, root)
-%attr(0644,root,root) %{_libdir}/flash-plugin/*
-%{_libdir}/mozilla/plugins/*.so
+%defattr(-, root, root, -)
+%{_bindir}/flash-player-properties
+%attr(0755,root,root) %{_libdir}/mozilla/plugins/*.so
+%{_libdir}/kde4/kcm_adobe_flash_player.so
+%{_datadir}/applications/*.desktop
+%{_datadir}/icons/*
+%{_datadir}/kde4/*
+%{_datadir}/pixmaps/*
 
 
 %changelog
+* Thu Jul 14 2011 Arkady L. Shane <ashejn@yandex-team.ru> 6:11.0.1.60-1
+- update to 11.0.1.60
+
 * Thu Nov 18 2010 Arkady L. Shane <ashejn@yandex-team.ru> - 10.2.161.23-2
 - apply https://bugzilla.redhat.com/show_bug.cgi?id=638477#c94 hack
 
