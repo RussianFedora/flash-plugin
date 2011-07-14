@@ -80,13 +80,13 @@ rm -rf %{buildroot}
 %defattr(-, root, root, -)
 %{_bindir}/flash-player-properties
 %attr(0755,root,root) %{_libdir}/mozilla/plugins/*.so
-%{_libdir}/kde4/kcm_adobe_flash_player.so
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*
 %{_datadir}/pixmaps/*
 
 %files kde
 %defattr(-, root, root, -)
+%{_libdir}/kde4/kcm_adobe_flash_player.so
 %{_datadir}/kde4/*
 
 
