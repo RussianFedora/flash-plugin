@@ -1,7 +1,7 @@
 Summary:	Adobe Flash Player 11
 Name:		flash-plugin
 Version:	11.0.1.60
-Release:	2.R
+Release:	3.R
 Epoch:		6
 
 Group:		Applications/Internet
@@ -24,7 +24,7 @@ as a tool for "Rich Internet Applications" ("RIAs").
 %package kde
 Summary:	KDE workspace files
 Group:          Applications/Internet
-Requires:	flash-plugin = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 
 %description kde
@@ -91,6 +91,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Jul 14 2011 Arkady L. Shane <ashejn@yandex-team.ru> 6:11.0.1.60-3.R
+- fix R in kde
+
 * Thu Jul 14 2011 Arkady L. Shane <ashejn@yandex-team.ru> 6:11.0.1.60-2.R
 - create separate package for KDE
 
