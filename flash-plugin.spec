@@ -1,14 +1,14 @@
 Summary:	Adobe Flash Player 11
 Name:		flash-plugin
-Version:	11.0.1.60
-Release:	3.R
+Version:	11.0.r1.129
+Release:	1.R
 Epoch:		6
 
 Group:		Applications/Internet
 License:	Proprietary
 URL:		http://www.adobe.com
-Source0:	http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_b1_install_lin_32_071311.tar.gz
-Source1:	http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_b1_install_lin_64_071311.tar.gz
+Source0:    http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_rc1_install_lin_32_090611.tar.gz
+Source1:    http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_rc1_install_lin_64_090611.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:	flash-plugin-meta
@@ -91,6 +91,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Sep 09 2011 Vasiliy N. Glazov <vascom2@gmail.com> 6:11.0.r1.129-1.R
+- update to 11.0.r1.129
+
 * Thu Jul 14 2011 Arkady L. Shane <ashejn@yandex-team.ru> 6:11.0.1.60-3.R
 - fix R in kde
 
