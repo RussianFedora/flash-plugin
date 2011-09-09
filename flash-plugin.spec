@@ -1,6 +1,6 @@
 Summary:	Adobe Flash Player 11
 Name:		flash-plugin
-Version:	11.0.r1.129
+Version:	11.0.1.129
 Release:	1.R
 Epoch:		6
 
