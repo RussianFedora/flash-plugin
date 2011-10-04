@@ -1,18 +1,17 @@
-Summary:	Adobe Flash Player 11
-Name:		flash-plugin
-Version:	11.0.1.129
-Release:	1.R
-Epoch:		6
+Summary:    Adobe Flash Player 11
+Name:       flash-plugin
+Version:    11.0.1.152
+Release:    1.R
+Epoch:  6
 
-Group:		Applications/Internet
-License:	Proprietary
-URL:		http://www.adobe.com
-Source0:    http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_rc1_install_lin_32_090611.tar.gz
-Source1:    http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_rc1_install_lin_64_090611.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Group:      Applications/Internet
+License:    Proprietary
+URL:        http://www.adobe.com
+Source0:    http://fpdownload.macromedia.com/get/flashplayer/pdc/%{version}/install_flash_player_11_linux.i386.tar.gz
+Source1:    http://fpdownload.macromedia.com/get/flashplayer/pdc/%{version}/install_flash_player_11_linux.x86_64.tar.gz
 
-Provides:	flash-plugin-meta
-AutoReq:	on
+Provides:   flash-plugin-meta
+AutoReq:    on
 
 
 %description
@@ -22,9 +21,9 @@ used for advertisements and games. More recently, it has been positioned
 as a tool for "Rich Internet Applications" ("RIAs").
 
 %package kde
-Summary:	KDE workspace files
-Group:          Applications/Internet
-Requires:	%{name} = %{epoch}:%{version}
+Summary:    KDE workspace files
+Group:      Applications/Internet
+Requires:   %{name} = %{epoch}:%{version}
 
 
 %description kde
@@ -91,6 +90,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Oct 04 2011 Vasiliy N. Glazov <vascom2@gmail.com> 6:11.0.1.152-1.R
+- update to 11.0.1.152
+
 * Fri Sep 09 2011 Vasiliy N. Glazov <vascom2@gmail.com> 6:11.0.r1.129-1.R
 - update to 11.0.r1.129
 
