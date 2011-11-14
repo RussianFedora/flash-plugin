@@ -46,8 +46,6 @@ pushd %{buildroot}
 mkdir -p %{buildroot}%{_libdir}/mozilla/plugins/
 %ifarch x86_64
 tar xzf %{SOURCE1}
-mv usr/lib/* usr/lib64
-rmdir usr/lib
 %else
 tar xzf %{SOURCE0}
 %endif
