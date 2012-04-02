@@ -51,6 +51,8 @@ tar xzf %{SOURCE0}
 %endif
 mv libflashplayer.so %{buildroot}%{_libdir}/mozilla/plugins/
 
+rm -f %{buildroot}/readme.txt
+
 
 %post
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
