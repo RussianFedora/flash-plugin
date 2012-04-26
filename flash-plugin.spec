@@ -1,14 +1,14 @@
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
-Version:    11.2.202.228
-Release:    1.R
-Epoch:      6
+Version:    11.1.102.63
+Release:    2.R
+Epoch:      7
 
 Group:      Applications/Internet
 License:    Proprietary
 URL:        http://www.adobe.com
-Source0:    http://fpdownload.macromedia.com/get/flashplayer/pdc/%{version}/install_flash_player_11_linux.i386.tar.gz
-Source1:    http://fpdownload.macromedia.com/get/flashplayer/pdc/%{version}/install_flash_player_11_linux.x86_64.tar.gz
+Source0:    install_flash_player_11_linux.i386.tar.gz
+Source1:    install_flash_player_11_linux.x86_64.tar.gz
 
 Provides:   flash-plugin-meta
 AutoReq:    on
@@ -90,6 +90,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Apr 26 2012 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.1.102.63-2.R
+- back to old flash.
+
 * Mon Apr  2 2012 Arkady L. Shane <ashejn@russianfedora.ru> 6:11.2.202.228-1.R
 - update to 11.2.202.228. Last?
 
