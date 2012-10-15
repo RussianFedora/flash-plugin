@@ -7,8 +7,8 @@ Epoch:      7
 Group:      Applications/Internet
 License:    Proprietary
 URL:        http://www.adobe.com
-Source0:    http://fpdownload.macromedia.com/get/flashplayer/pdc/%{version}/install_flash_player_11_linux.i386.tar.gz
-Source1:    http://fpdownload.macromedia.com/get/flashplayer/pdc/%{version}/install_flash_player_11_linux.x86_64.tar.gz
+Source0:    install_flash_player_11_linux.i386.tar.gz
+Source1:    install_flash_player_11_linux.x86_64.tar.gz
 
 Provides:   flash-plugin-meta
 AutoReq:    on
