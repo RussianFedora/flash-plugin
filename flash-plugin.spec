@@ -53,6 +53,10 @@ mv libflashplayer.so %{buildroot}%{_libdir}/mozilla/plugins/
 
 rm -f %{buildroot}/readme.txt
 
+%ifarch x86_64
+rm -rf %{buildroot}/usr/lib/kde4/
+%endif
+
 
 %post
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
