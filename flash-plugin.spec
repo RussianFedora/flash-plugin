@@ -1,7 +1,7 @@
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
 Version:    11.2.202.346
-Release:    2.R
+Release:    3.R
 Epoch:      7
 
 Group:      Applications/Internet
@@ -90,10 +90,13 @@ rm -rf %{buildroot}
 %files kde
 %defattr(-, root, root, -)
 %{_libdir}/kde4/kcm_adobe_flash_player.so
-%{_datadir}/kde4/*
+%{_datadir}/kde4/services/kcm_adobe_flash_player.desktop
 
 
 %changelog
+* Mon Mar 17 2014 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.346-3.R
+- and in kde package too
+
 * Mon Mar 17 2014 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.346-2.R
 - pack only files
 
