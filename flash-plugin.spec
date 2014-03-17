@@ -1,7 +1,7 @@
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
 Version:    11.2.202.346
-Release:    1.R
+Release:    2.R
 Epoch:      7
 
 Group:      Applications/Internet
@@ -84,8 +84,8 @@ rm -rf %{buildroot}
 %{_bindir}/flash-player-properties
 %attr(0755,root,root) %{_libdir}/mozilla/plugins/*.so
 %{_datadir}/applications/*.desktop
-%{_datadir}/icons/*
-%{_datadir}/pixmaps/*
+%{_datadir}/icons/hicolor/*/apps/flash-player-properties.png
+%{_datadir}/pixmaps/flash-player-properties.png
 
 %files kde
 %defattr(-, root, root, -)
@@ -94,7 +94,10 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Mon Mar 16 2014 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.346-1.R
+* Mon Mar 17 2014 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.346-2.R
+- pack only files
+
+* Mon Mar 17 2014 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.346-1.R
 - update to 11.2.202.310
 
 * Mon Sep 30 2013 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.310-1.R
