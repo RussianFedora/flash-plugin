@@ -1,7 +1,7 @@
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
 Version:    11.2.202.451
-Release:    1.R
+Release:    1%{?dist}
 Epoch:      7
 
 Group:      Applications/Internet
@@ -56,6 +56,8 @@ rm -f %{buildroot}/readme.txt
 %ifarch x86_64
 rm -rf %{buildroot}/usr/lib/kde4/
 %endif
+
+rm -rf %{buildroot}/LGPL
 
 
 %post
