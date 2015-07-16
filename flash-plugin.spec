@@ -1,6 +1,6 @@
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
-Version:    11.2.202.481
+Version:    11.2.202.491
 Release:    1%{?dist}
 Epoch:      7
 
@@ -96,6 +96,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Jul 16 2015 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.491-1.R
+- update to 11.2.202.491
+
 * Thu Jul  9 2015 Arkady L. Shane <ashejn@russianfedora.ru> 7:11.2.202.481-1.R
 - update to 11.2.202.481
 
