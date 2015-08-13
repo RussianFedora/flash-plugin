@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
 Version:    11.2.202.508
