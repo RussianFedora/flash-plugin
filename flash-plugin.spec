@@ -2,7 +2,7 @@
 
 Summary:    Adobe Flash Player 11
 Name:       flash-plugin
-Version:    11.2.202.535
+Version:    11.2.202.540
 Release:    1%{?dist}
 Epoch:      7
 
@@ -98,6 +98,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Oct 19 2015 Vasiliy N. Glazov <vascom2@gmail.com> 7:11.2.202.540-1.R
+- update to 11.2.202.540
+
 * Tue Oct 13 2015 Vasiliy N. Glazov <vascom2@gmail.com> 7:11.2.202.535-1.R
 - update to 11.2.202.535
 
