@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 
-Summary:    Adobe Flash Player 11
+Summary:    NPAPI Adobe Flash Player
 Name:       flash-plugin
 Version:    25.0.0.127
 Release:    1%{?dist}
