@@ -2,7 +2,7 @@
 
 Summary:    NPAPI Adobe Flash Player
 Name:       flash-plugin
-Version:    26.0.0.151
+Version:    27.0.0.130
 Release:    1%{?dist}
 Epoch:      7
 
@@ -33,7 +33,7 @@ Adobe Flash files to work with KDE
 
 
 %prep
-%setup -q -c -T 
+%setup -q -c -T
 
 
 %build
@@ -99,6 +99,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Sep 29 2017 Arkady L. Shane <ashejn@russianfedora.pro> 7:27.0.0.130-1
+- update to 27.0.0.130
+
 * Mon Aug 28 2017 Arkady L. Shane <ashejn@russianfedora.pro> 7:26.0.0.151-1
 - update to 26.0.0.151
 
