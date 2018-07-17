@@ -2,7 +2,7 @@
 
 Summary:    NPAPI Adobe Flash Player
 Name:       flash-plugin
-Version:    30.0.0.113
+Version:    30.0.0.134
 Release:    1%{?dist}
 Epoch:      7
 
@@ -99,6 +99,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Jul 17 2018 Arkady L. Shane <ashejn@russianfedora.pro> 7:30.0.0.134-1
+- update to 30.0.0.134
+
 * Wed Jun 27 2018 Arkady L. Shane <ashejn@russianfedora.pro> 7:30.0.0.113-1
 - update to 30.0.0.113
 
